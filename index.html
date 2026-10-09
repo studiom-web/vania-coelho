@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vania Coelho | Corretora de Imóveis - CRECI 16219F</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oxford: '#192338',
+                        spacecadet: '#1E2E4F',
+                        yinmn: '#31487A',
+                        jordy: '#8FB3E2',
+                        lavender: '#D9E1F1',
+                        gold: '#C5A059',
+                        goldhover: '#B38E46'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #192338 0%, #1E2E4F 50%, #31487A 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F4F7FC 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #8FB3E2 0%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(90deg, #DFBA73 0%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(30, 46, 79, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(143, 179, 226, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-jordy selection:text-oxford">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-jordy/20 border border-jordy/40 flex items-center justify-center text-jordy group-hover:bg-jordy group-hover:text-oxford transition-all">
+                        <i class="fa-solid me-0 fa-building-user text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide block">VANIA COELHO</span>
+                        <span class="text-xs text-jordy tracking-wider block font-medium uppercase">My Broker | CRECI 16219F</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-200">
+                    <a href="#sobre" class="hover:text-jordy transition-colors">Sobre Mim</a>
+                    <a href="#diferenciais" class="hover:text-jordy transition-colors">Por Que Comprar</a>
+                    <a href="#mybroker" class="hover:text-jordy transition-colors">My Broker Global</a>
+                    <a href="#empreendimentos" class="hover:text-jordy transition-colors">Empreendimentos</a>
+                    <a href="#construtoras" class="hover:text-jordy transition-colors">Parceiros</a>
+                    <a href="#contato" class="hover:text-jordy transition-colors">Contato</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20im%C3%B3veis!" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-semibold px-5 py-2.5 rounded-full shadow-md shadow-emerald-900/30 flex items-center gap-2 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Atendimento Rápido</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="hidden md:hidden bg-oxford/95 border-b border-jordy/20 px-6 py-6 transition-all">
+            <nav class="flex flex-col gap-4 text-slate-200 text-lg">
+                <a href="#sobre" class="mobile-link hover:text-jordy">Sobre Mim</a>
+                <a href="#diferenciais" class="mobile-link hover:text-jordy">Por Que Comprar</a>
+                <a href="#mybroker" class="mobile-link hover:text-jordy">My Broker Global</a>
+                <a href="#empreendimentos" class="mobile-link hover:text-jordy">Empreendimentos</a>
+                <a href="#construtoras" class="mobile-link hover:text-jordy">Parceiros</a>
+                <a href="#contato" class="mobile-link hover:text-jordy">Contato</a>
+                <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es!" target="_blank" class="mt-2 bg-emerald-600 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Conversar no WhatsApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero pt-32 pb-20 md:pt-40 md:pb-32 text-white relative overflow-hidden">
+        <!-- Background Ambient Glows -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-jordy/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-80 h-80 bg-yinmn/30 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content Left -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-jordy/15 border border-jordy/30 text-jordy text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-award text-gold"></i> Corretora de Imóveis • CRECI 16219F
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Transformando sonhos em <span class="text-gold-gradient italic">negócios extraordinários</span>.
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+                        Há <strong>19 anos</strong> conectando famílias e investidores às melhores oportunidades imobiliárias de Vila Velha, Guarapari e região.
+                    </p>
+
+                    <!-- CTAs & Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania!%20Gostaria%20de%20receber%20atendimento%20personalizado." target="_blank" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-900/40 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Falar no WhatsApp</span>
+                        </a>
+
+                        <a href="#empreendimentos" class="w-full sm:w-auto bg-spacecadet/80 hover:bg-yinmn border border-jordy/30 text-white font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-compass text-jordy"></i>
+                            <span>Ver Oportunidades</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics -->
+                    <div class="pt-8 border-t border-slate-700/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-jordy font-serif">19+</div>
+                            <div class="text-xs sm:text-sm text-slate-300">Anos no Mercado</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-jordy font-serif">100%</div>
+                            <div class="text-xs sm:text-sm text-slate-300">Segurança Jurídica</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold text-jordy font-serif">+20</div>
+                            <div class="text-xs sm:text-sm text-slate-300">Construtoras Parceiras</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Container Right -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Frame Styling -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-jordy via-yinmn to-gold rounded-3xl blur-lg opacity-40"></div>
+                        
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-jordy/30 shadow-2xl bg-oxford">
+                            <!-- High Resolution Featured Image of Vania -->
+                            <img src="perfil.jpg" alt="Vania Coelho Corretora" class="w-full h-[480px] object-cover object-top hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80';">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-xl border border-white/10 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0">
+                                    <i class="fa-solid fa-globe text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">My Broker Imóveis</h4>
+                                    <p class="text-xs text-jordy">+75 unidades no Brasil • EUA 🇺🇸 • Portugal 🇵🇹 • Paraguai 🇵🇾</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Secondary Photo Gallery Representation -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="bg-lavender/50 rounded-3xl p-4 sm:p-6 border border-jordy/20">
+                            <img src="apresentacao.JPG" alt="Vania Coelho Escritório" class="rounded-2xl w-full h-[380px] object-cover object-top shadow-lg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80';">
+                            
+                            <!-- Sub Badge -->
+                            <div class="mt-4 bg-oxford text-white p-4 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-jordy uppercase font-semibold">Credenciamento Profissional</p>
+                                    <p class="text-sm font-bold">CRECI 16219F</p>
+                                </div>
+                                <span class="px-3 py-1 bg-yinmn text-jordy rounded-full text-xs font-bold">Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Presentation Text -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-yinmn text-sm font-bold uppercase tracking-widest">
+                        <span class="w-8 h-0.5 bg-yinmn"></span> 1. Apresentação
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oxford">
+                        Olá, eu sou <span class="text-yinmn">Vania Coelho</span>.
+                    </h2>
+
+                    <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                        <p>
+                            Há <strong>19 anos</strong> estou no mercado imobiliário e essa jornada começou lá em Campos dos Goytacazes, no Rio de Janeiro, onde tudo teve início no mercado da beleza.
+                        </p>
+                        <p>
+                            Foi ali que descobri algo em mim que carrego até hoje: <em>a capacidade de me conectar com as pessoas e entender de verdade os seus sonhos</em>. Foi essa mesma habilidade que me levou muito além do que eu imaginava.
+                        </p>
+                        <p>
+                            Minha migração para o mercado imobiliário não foi por acaso. Eu enxerguei nesse setor a possibilidade de alcançar outros sonhos, os meus e os de cada cliente que passaria pelo meu caminho. Fui convidada a integrar uma grande empresa do setor, e esse foi o meu divisor de águas, a porta que se abriu para o mercado que se tornaria minha verdadeira vocação.
+                        </p>
+                        <p>
+                            Nada disso eu teria conquistado sozinha. Tive o apoio constante dos meus filhos, do meu marido e de gestores que acreditaram no meu potencial em cada etapa dessa caminhada.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-lavender/40 border-l-4 border-yinmn text-oxford font-medium italic">
+                        "Hoje, atuo como corretora de imóveis (CRECI 16219F) na My Broker, e meu propósito é transformar vidas por meio de negócios imobiliários bem sucedidos."
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <div class="flex items-center gap-2 text-slate-700 text-sm font-semibold">
+                            <i class="fa-solid fa-heart text-red-500"></i> Foco na Família
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700 text-sm font-semibold">
+                            <i class="fa-solid fa-handshake text-yinmn"></i> Parceria de Confiança
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700 text-sm font-semibold">
+                            <i class="fa-solid fa-shield-halved text-emerald-600"></i> Ética & Transparência
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Buy With Me Section -->
+    <section id="diferenciais" class="py-20 bg-slate-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-yinmn font-bold text-sm tracking-widest uppercase">2. Diferenciais & Segurança</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oxford mt-2">
+                    Por que comprar comigo?
+                </h2>
+                <p class="text-slate-600 mt-4 text-base">
+                    Quase duas décadas de experiência que fazem toda a diferença na hora de te acompanhar em uma das decisões mais importantes da sua vida.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-spacecadet text-jordy flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-oxford mb-3">19 Anos de Vivência</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Em quase duas décadas, vivi de perto todas as transformações do mercado imobiliário, dominando suas nuances para proteger seu investimento.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-yinmn text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-oxford mb-3">Visão de Oportunidades</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Acompanho construtoras, lançamentos e regiões em pleno crescimento, antecipando as melhores opções antes do mercado geral.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-jordy text-oxford flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-oxford mb-3">Assertividade e Agilidade</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Processo prático, seguro e focado na sua necessidade real, poupando seu tempo na busca pelo imóvel ideal.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-gold text-white flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-oxford mb-3">Parceira de Confiança</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Mais do que uma corretora, entendo que por trás de cada compra existe um objetivo de vida e uma história única.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- My Broker Global Presence Section -->
+    <section id="mybroker" class="py-16 bg-spacecadet text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-oxford/80 rounded-3xl p-8 sm:p-12 border border-jordy/30 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-jordy/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-jordy/20 text-jordy text-xs font-bold uppercase tracking-widest">Força & Alcance Global</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                            My Broker Imóveis
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            A My Broker é uma das maiores redes imobiliárias do país. Com mais de <strong>75 unidades distribuídas pelo Brasil</strong>, a marca cruza fronteiras com presença internacional nos <strong>EUA 🇺🇸</strong>, <strong>Portugal 🇵🇹</strong> e em breve com sua nova unidade no <strong>Paraguai 🇵🇾</strong>.
+                        </p>
+                        <p class="text-jordy font-medium text-sm">
+                            <i class="fa-solid fa-building-circle-check text-gold mr-2"></i> Aqui no Espírito Santo, trabalhamos em parceria direta com todas as construtoras para oferecer as melhores oportunidades aos nossos clientes.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-spacecadet p-5 rounded-2xl border border-jordy/20">
+                            <div class="text-3xl font-bold font-serif text-gold mb-1">+75</div>
+                            <div class="text-xs text-slate-300 font-medium">Unidades no Brasil 🇧🇷</div>
+                        </div>
+                        <div class="bg-spacecadet p-5 rounded-2xl border border-jordy/20">
+                            <div class="text-2xl font-bold text-jordy mb-1">EUA 🇺🇸</div>
+                            <div class="text-xs text-slate-300 font-medium">Atuação Internacional</div>
+                        </div>
+                        <div class="bg-spacecadet p-5 rounded-2xl border border-jordy/20">
+                            <div class="text-2xl font-bold text-jordy mb-1">Portugal 🇵🇹</div>
+                            <div class="text-xs text-slate-300 font-medium">Atuação Europa</div>
+                        </div>
+                        <div class="bg-spacecadet p-5 rounded-2xl border border-jordy/20">
+                            <div class="text-2xl font-bold text-gold mb-1">Paraguai 🇵🇾</div>
+                            <div class="text-xs text-slate-300 font-medium">Em Breve Nova Unidade</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Properties Section -->
+    <section id="empreendimentos" class="py-20 bg-oxford text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-jordy font-bold text-sm uppercase tracking-wider">4. Seleção Exclusiva</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">
+                        Alguns Empreendimentos Disponíveis
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2 md:hidden">
+                        <i class="fa-solid fa-hand-pointer text-jordy animate-pulse"></i> Deslize para o lado para ver todos os imóveis.
+                    </p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20quero%20consultar%20todos%20os%20im%C3%B3veis%20dispon%C3%ADveis" target="_blank" class="inline-flex items-center gap-2 text-jordy hover:text-white transition-colors text-sm font-semibold">
+                        Consultar acervo completo <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Properties Horizontal Scroll (Mobile) / Grid (Desktop) -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 scrollbar-none">
+                
+                <!-- Property Card 1: Pienza -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Pienza.jpeg" alt="Pienza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-yinmn text-jordy font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider border border-jordy/30">Itaparica</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Pienza</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Itaparica, Vila Velha</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20no%20empreendimento%20Pienza!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2: Praia da Costa Residencial Club -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Residencial club.jpeg" alt="Praia da Costa Residencial Club" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-yinmn text-jordy font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider border border-jordy/30">Praia da Costa</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Praia da Costa Residencial Club</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Praia da Costa, Vila Velha</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20no%20Praia%20da%20Costa%20Residencial%20Club!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3: Edifício Francisco Viana -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Francisco Viana.jpeg" alt="Edifício Francisco Viana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-gold text-oxford font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Frente Mar</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Edifício Francisco Viana</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Itaparica, Vila Velha</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20no%20Ed%C3%ADf%C3%ADcio%20Francisco%20Viana!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4: Casa Comercial -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Casa comercial.jpeg" alt="Casa Comercial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-yinmn text-jordy font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider border border-jordy/30">Comercial</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Casa Comercial</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Itapuã, Vila Velha</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20na%20Casa%20Comercial%20em%20Itapu%C3%A3!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5: Art Life -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Art life.jpeg" alt="Art Life" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-gold text-oxford font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Frente Mar</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Art Life</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Guarapari, ES</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20no%20Art%20Life%20Guarapari!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6: Riviera Delmar -->
+                <div class="min-w-[82vw] sm:min-w-[320px] md:min-w-0 snap-center bg-spacecadet rounded-2xl overflow-hidden border border-jordy/20 shadow-xl flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="Riviera Delmar.jpeg" alt="Riviera Delmar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=800&q=80';">
+                        <span class="absolute top-4 left-4 bg-yinmn text-jordy font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider border border-jordy/30">Porteira Fechada</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-jordy transition-colors">Riviera Delmar</h3>
+                            <p class="text-xs text-jordy mt-1"><i class="fa-solid fa-location-dot"></i> Itapuã, Vila Velha</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-end">
+                            <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20tenho%20interesse%20no%20Riviera%20Delmar%20Itapu%C3%A3!" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2.5 rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Tenho Interesse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Studios Banner -->
+            <div class="mt-12 bg-gradient-to-r from-yinmn to-spacecadet rounded-2xl p-8 border border-jordy/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-jordy/20 text-jordy flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">Studios & Investimentos de Alta Rentabilidade</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">Opções compactas e modernas perfeitas para locação por temporada (Airbnb) ou renda passiva.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania,%20quero%20conhecer%20as%20op%C3%A7%C3%B5es%20de%20Studios%20dispon%C3%ADveis!" target="_blank" class="shrink-0 bg-white text-oxford hover:bg-jordy font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                    Ver Studios Disponíveis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Companies / Partners Section -->
+    <section id="construtoras" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Sold Apartments Highlight -->
+            <div class="bg-lavender/30 border border-jordy/30 rounded-3xl p-8 mb-16">
+                <div class="max-w-3xl">
+                    <span class="text-yinmn font-bold text-xs uppercase tracking-wider">3. Histórico de Sucesso</span>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-oxford mt-1">
+                        Apartamentos Vendidos & Parcerias Consolidadas
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Ao longo da minha carreira, construí parcerias sólidas com algumas das principais construtoras do mercado, resultado de confiança mútua e de um histórico de entregas bem-sucedidas:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-oxford shadow-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building text-yinmn"></i> Ricardo Teixeira
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-oxford shadow-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building text-yinmn"></i> Cyrela
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-oxford shadow-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building text-yinmn"></i> Conscam
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-oxford shadow-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building text-yinmn"></i> Quality
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Partner Companies -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-yinmn font-bold text-xs uppercase tracking-wider">5. Cobertura Completa no ES</span>
+                <h2 class="font-serif text-3xl font-bold text-oxford mt-1">
+                    Trabalho com Todas as Construtoras
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    Aqui no Espírito Santo, atuo em parceria com todas as principais construtoras do mercado. Isso amplia imensamente as opções e garante as melhores condições comerciais para você:
+                </p>
+            </div>
+
+            <!-- Tags Grid of Companies -->
+            <div class="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Argo</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Grande Construtora</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Canal</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Citta</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">DR Construtora</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Épura</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Jave</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Invite</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Espaço</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Proeng</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Pinheiro e Sá</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Vitacon</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Setiba Ville</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Vaz</span>
+                <span class="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-spacecadet hover:text-white border border-slate-200 text-slate-700 text-sm font-semibold transition-all cursor-default">Inocoop</span>
+                <span class="px-5 py-2.5 rounded-full bg-yinmn text-white text-sm font-semibold">e muitas outras...</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 gradient-hero text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text & Direct Contact Links -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-jordy font-bold text-xs uppercase tracking-widest">6. Fale Comigo</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+                        Seu próximo passo começa com uma conversa.
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Entre em contato comigo agora mesmo e vamos juntos descobrir o imóvel ideal para você, com toda a segurança e experiência de quem já ajudou centenas de pessoas a realizarem esse sonho.
+                    </p>
+
+                    <!-- Contact Details Box -->
+                    <div class="p-6 rounded-2xl bg-spacecadet border border-jordy/30 shadow-xl space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">WhatsApp</h4>
+                                <p class="text-sm text-jordy font-medium">+55 27 99996-7340</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/5527999967340?text=Ol%C3%A1%20Vania!%20Quero%20conversar%20sobre%20meu%20pr%C3%B3ximo%20im%C3%B3vel." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-950/50">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chamar no WhatsApp</span>
+                        </a>
+
+                        <div class="pt-4 border-t border-slate-700/60 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-jordy/20 text-jordy flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xs text-slate-300 uppercase font-semibold">E-mail para Contato</h5>
+                                <a href="mailto:Coelhovania63@gmail.com" class="text-sm font-semibold text-white hover:text-jordy transition-colors">Coelhovania63@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks -->
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 px-5 py-3 rounded-xl bg-oxford border border-jordy/20 hover:border-jordy text-slate-200 hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram text-xl text-pink-400"></i>
+                            <span class="text-sm font-semibold">@vaniacoelho.corretora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column Lead Form -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white rounded-3xl p-8 shadow-2xl text-slate-800 border border-slate-200">
+                        <h3 class="font-serif text-2xl font-bold text-oxford mb-2">Envie uma Mensagem Direta</h3>
+                        <p class="text-xs text-slate-500 mb-6">Preencha seus dados para iniciar a conversa diretamente no WhatsApp da Vania.</p>
+
+                        <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-oxford uppercase tracking-wider mb-1">Seu Nome Completo</label>
+                                <input type="text" id="leadName" required placeholder="Ex: Maria Silva" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yinmn text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-oxford uppercase tracking-wider mb-1">Telefone / WhatsApp</label>
+                                    <input type="tel" id="leadPhone" required placeholder="(27) 99996-7340" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yinmn text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-oxford uppercase tracking-wider mb-1">Interesse Principal</label>
+                                    <select id="leadInterest" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yinmn text-sm bg-white">
+                                        <option>Comprar para Morar</option>
+                                        <option>Investimento / Rentabilidade</option>
+                                        <option>Lançamentos na Planta</option>
+                                        <option>Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-oxford uppercase tracking-wider mb-1">Como Posso te Ajudar?</label>
+                                <textarea id="leadMessage" rows="3" placeholder="Descreva a região de preferência, quantidade de quartos ou valor estimado..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yinmn text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Iniciar Conversa no WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-oxford text-slate-400 py-12 border-t border-jordy/20 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-white">VANIA COELHO</h3>
+                    <p class="text-xs text-jordy">Corretora de Imóveis • CRECI 16219F • My Broker Imóveis</p>
+                    <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-envelope text-jordy"></i> Coelhovania63@gmail.com | <i class="fa-brands fa-whatsapp text-emerald-400"></i> +55 27 99996-7340</p>
+                </div>
+
+                <div class="flex items-center gap-6 text-xs text-slate-300">
+                    <a href="#sobre" class="hover:text-jordy">Sobre</a>
+                    <a href="#diferenciais" class="hover:text-jordy">Diferenciais</a>
+                    <a href="#mybroker" class="hover:text-jordy">My Broker</a>
+                    <a href="#empreendimentos" class="hover:text-jordy">Empreendimentos</a>
+                    <a href="#construtoras" class="hover:text-jordy">Construtoras</a>
+                </div>
+
+                <div class="text-xs text-slate-300">
+                    © 2026 Vania Coelho. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Handling -> Direct WhatsApp redirect
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const interest = document.getElementById('leadInterest').value;
+            const message = document.getElementById('leadMessage').value;
+
+            const text = `Olá Vania, meu nome é ${name}. Meu contato é ${phone}.\n*Interesse:* ${interest}\n*Mensagem:* ${message}`;
+            window.open(`https://wa.me/5527999967340?text=${encodeURIComponent(text)}`, "_blank");
+        }
+    </script>
+</body>
+</html>
